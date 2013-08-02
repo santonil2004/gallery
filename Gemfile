@@ -7,6 +7,9 @@ gem 'rails', '4.0.0'
 #gem 'sqlite3'
 gem 'mysql2'
 
+#group :development do
+#end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -40,6 +43,9 @@ end
 group :production do
 	gem 'pg'
 end
+
+
+gem 'devise'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
