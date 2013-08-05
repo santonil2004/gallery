@@ -33,9 +33,15 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :test, :development do
+end
+
+
 group :test do
+	gem 'database_cleaner'
 	gem 'rspec-rails'
 	gem 'capybara'
+	gem 'launchy'
 end
 
 gem 'devise'
