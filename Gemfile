@@ -34,6 +34,8 @@ group :doc do
 end
 
 group :test, :development do
+	gem 'mysql2'
+	gem 'pry-rails'
 end
 
 
