@@ -4,6 +4,8 @@ class Album < ActiveRecord::Base
 	#has_one :
 	#has_and_belongs_to_many
 
+	#has_many : photos
+
 
 	#validates:title, presence:true
 	# or we can write as follow

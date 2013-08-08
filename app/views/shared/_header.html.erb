@@ -7,12 +7,35 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if current_user %>
-	<h2><%= "Wel Come : #{current_user.email}"%></h2>
-	<%= link_to 'sign out',destroy_user_session_path, :method=>:delete %>
-<% else %>
-	<%= link_to 'sign in',new_user_session_path, :method=>:get %>
-<% end %>
+
+	<header id="header">
+		<hgroup>
+			<h1 class="site_title"><a href="index.html">Website Admin</a></h1>
+			<h2 class="section_title">Dashboard</h2><div class="btn_view_site"><a href="http://www.medialoot.com">View Site</a></div>
+		</hgroup>
+	</header> <!-- end of header bar -->
+	
+	<section id="secondary_bar">
+		<div class="user">
+		<% if current_user %>
+			<p><%= "#{current_user.email}"%></p>
+			<%= link_to 'sign out',destroy_user_session_path, :method=>:delete, :class=>'logout_user' %>
+		<% else %>
+			<%= link_to 'sign in',new_user_session_path, :method=>:get %>
+		<% end %>
+			<!-- <a class="logout_user" href="#" title="Logout">Logout</a> -->
+		</div>
+		
+
+		<div class="breadcrumbs_container">
+			<article class="breadcrumbs">
+				<a href="index.html">Website Admin</a> <div class="breadcrumb_divider"></div>
+			<a class="current">Dashboard</a></article>
+		</div>
+	</section><!-- end of secondary bar -->
+
+
+
 
  <p class="notice" style="color:green;"><%= notice %></p>
  <p class="alert" style="color:red;"><%= alert %></p>
