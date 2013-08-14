@@ -1,14 +1,10 @@
 class Album < ActiveRecord::Base
-	belongs_to :user
 
-	#has_one :
-	#has_and_belongs_to_many
+  belongs_to :user
 
-	#has_many : photos
+  has_many :photos
+
+  validates :title, presence: true
 
 
-	#validates:title, presence:true
-	# or we can write as follow
-	has_many :photos
-	validates:title, {:presence=>true}
 end

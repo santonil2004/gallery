@@ -7,10 +7,6 @@ class AlbumsController < ApplicationController
     @albums = Album.all
   end
 
-  # GET /albums/1
-  # GET /albums/1.json
-  def show
-  end
 
   # GET /albums/new
   def new
@@ -24,15 +20,14 @@ class AlbumsController < ApplicationController
   # POST /albums
   # POST /albums.json
   def create
-    #@album = Album.new(album_params)
-    #@album.user_id = current_user.id
-    #@album.user = current_user
+
     @album = current_user.albums.build(album_params)
 
     respond_to do |format|
       if @album.save
-        # send notificaion email
+
         AlbumMailer.notify_user(@album).deliver
+
         format.html { redirect_to @album, notice: 'Album was successfully created.' }
         format.json { render action: 'show', status: :created, location: @album }
       else
