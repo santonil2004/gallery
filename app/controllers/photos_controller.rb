@@ -17,6 +17,17 @@ class PhotosController < ApplicationController
     end
   end
 
+  def index
+    
+    @album = Album.find params[:album_id]
+    @photo = @album.photos.find(params[:format])
+
+     #binding.pry
+
+
+
+  end
+
 private
   def photo_params
     params.require(:photo).permit(:caption, :description, :photo)
