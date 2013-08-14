@@ -9,5 +9,6 @@ class Album < ActiveRecord::Base
 
 	#validates:title, presence:true
 	# or we can write as follow
+	has_many :photos
 	validates:title, {:presence=>true}
 end
