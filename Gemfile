@@ -46,6 +46,7 @@ end
 gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'quiet_assets'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

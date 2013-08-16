@@ -1,0 +1,22 @@
+<h1> Support </h1>
+
+<%= form_for @support do|f|%>
+
+<p>
+	<%= f.label :subject %>
+	<br>
+	<%= f.text_field :subject %>
+</p>
+
+<p>
+	<%= f.label :messege %>
+	<br>
+	<%= f.text_area :messege %>
+</p>
+
+<p>
+	<%= f.submit :submit %>
+	
+</p>
+	
+<% end %>

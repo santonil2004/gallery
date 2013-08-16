@@ -6,6 +6,25 @@
 </p>
 
 
-<!--<%= @photo.photo %>-->
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Image</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
 
-<%= image_tag(@photo.photo.large) %>
+  <tbody>
+    <% @photos.each do |photo| %>
+      <tr>
+        <td><%= photo.caption %></td>
+        <td><%= image_tag(photo.photo.large) %></td>
+         <td><%= link_to 'edit' , edit_album_photo_path(@album, photo) %></td>
+        <td></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+  

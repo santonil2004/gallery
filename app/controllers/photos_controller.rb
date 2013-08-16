@@ -17,10 +17,15 @@ class PhotosController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def index
     
     @album = Album.find params[:album_id]
-    @photo = @album.photos.find(params[:format])
+    @photos = Photo.all
+
+      #@photos = @album.photos.find(params[:format])
 
      #binding.pry
 
