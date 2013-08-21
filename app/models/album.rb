@@ -4,7 +4,14 @@ class Album < ActiveRecord::Base
 
   has_many :photos
 
-  validates :title, presence: true
+  validates :title, presence: true, uniqueness: true
+  #validates_uniqueness_of :title
+
+  before_save :uppercase_title
+
+  def uppercase_title
+  	self.title = self.title.capitalize
+  end
 
 
 end
